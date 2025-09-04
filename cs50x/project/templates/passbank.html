@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block title %}
+    PassBank
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Website</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for password in passwords %}
+                <tr>
+                    <td>{{ password.website_name }}</td>
+                    <td>{{ password.username }}</td>
+                    <td>
+                        <div class="password-container">
+                            <span class="password-span" id="password-eye1" data-password="{{ password.password }}" data-visible="false">{{ password.password }}</span>
+                            <i class="password-toggle-icon fa fa-eye" onclick="togglePasswordVisibility(this)"></i>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="/passbank/edit/{{ password.id }}" class="btn btn-primary btn-sm">Edit</a>
+                        <a href="/passbank/delete/{{ password.id }}" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/passbank/add" class="btn btn-success">Add Password</a>
+    <script>
+        function togglePasswordVisibility(icon) {
+    var passwordSpan = icon.previousElementSibling; // Get the password span element
+    var isVisible = passwordSpan.getAttribute('data-visible') === 'true';
+
+    if (isVisible) {
+        passwordSpan.setAttribute('data-visible', 'false');
+        passwordSpan.textContent = '*'.repeat(passwordSpan.getAttribute('data-password').length);
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    } else {
+        passwordSpan.setAttribute('data-visible', 'true');
+        passwordSpan.textContent = passwordSpan.getAttribute('data-password');
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    }
+}
+    </script>
+{% endblock %}

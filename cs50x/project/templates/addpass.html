@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block title %}
+Add Password
+{% endblock %}
+
+{% block main %}
+<form action="/passbank" method="post">
+    <div class="mb-3">
+        <input type="text" class="form-control" id="website_name" name="website_name" placeholder="Website" required>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" id="username" name="username" placeholder="Username" required style="width:30%; margin-left:35%";>
+    </div>
+    <div class="mb-3">
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" required style="width:30%; margin-left:35%";>
+        <button type="button" id="generate-password-btn" class="btn btn-secondary">Generate Password</button>
+    </div>
+    <button type="submit" class="btn btn-primary">Add Password</button>
+</form>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const generateButton = document.getElementById("generate-password-btn");
+    const passwordInput = document.getElementById("password");
+
+    generateButton.addEventListener("click", function() {
+        fetch("/generate_password", {
+            method: "POST",
+            body: JSON.stringify({ length: 16 }), // You can adjust the length here
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(response => response.text())
+        .then(password => {
+            passwordInput.value = password;
+        });
+    });
+});
+</script>
+{% endblock %}

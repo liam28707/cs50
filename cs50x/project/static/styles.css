@@ -1,0 +1,111 @@
+/* Apply font family to the whole page */
+body {
+    font-family: 'Krona One', sans-serif;
+}
+
+main {
+    font-family: 'Open Sans', sans-serif;
+}
+/* Change the background color of the navbar */
+.navbar {
+    background-color: #010536;
+}
+
+/* Adjust the positioning of the image within the .image-label span */
+.image-label {
+    display: inline-block; /* Ensure the span behaves like a block element */
+    margin-top: -50px; /* Move the span and its contents up by 50 pixels */
+    margin-right: 5px; /* Move the span and its contents to the right by 5 pixels */
+
+}
+
+.navbar-toggler-icon {
+    color: #fff; /* Change text color to white */
+    font-size: 60%; /* Adjust font size to be slightly smaller */
+
+}
+.navbar a {
+    color: #fff; /* Change text color to white */
+}
+.navbar a:hover {
+    color: #fff; /* Change text color to white when hovering */
+}
+
+/* Change color of navigation links in collapsed state */
+.navbar-toggler[aria-expanded="false"] .navbar-toggler-icon {
+    color: #fff; /* Change text color to white when collapsed */
+}
+
+.navbar-nav.ms-auto {
+    margin-right: 50px;
+    flex-wrap: nowrap;
+}
+.nav-item {
+    margin-top:-15;
+    margin-right:10px;
+}
+
+.navbar-nav {
+    display: flex; /* Use Flexbox layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.navbar-nav .nav-item {
+    flex-shrink: 0; /* Prevent shrinking */
+    margin-right: 20px; /* Add spacing between links */
+}
+
+/* Apply a rounded border to the nav-link elements */
+.nav-item .nav-link {
+    border: 2px solid #ffff00; /* Add a border to the links */
+    border-radius: 20px; /* Add rounded corners */
+    padding: 5px 15px; /* Add padding for spacing */
+    transition: background-color 0.3s;
+}
+
+/* Add spacing between the links */
+.nav-item + .nav-item .nav-link {
+    margin-left: 10px; /* Adjust as needed */
+    margin-bottom: 8px;
+}
+.nav-item .nav-link:hover {
+    background-color: #ffff00; /* Change to your preferred color */
+    color:#010536;
+}
+.about-box{
+    border: 2px solid #007BFF;
+    padding: 20px;
+    margin:20px;
+    background-color: #F0F0F0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.about-box h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-box p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+.custom-logout {
+    display: flex;
+    align-items: center;
+}
+.text-left {
+    text-align: left;
+}
+.about-box {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.about-content {
+    text-align: left; /* Align text from left to right */
+}
+.custom-align{
+    text-align:center;
+}
+
+

@@ -1,0 +1,10 @@
+1. I would characterize their audio aura by looking at the genre of songs most listened to as well as taking
+into account the average energy, danceability and valence of the songs. SO if the listeners avg valence,
+energy and danceability are high it could be characterized as high energy music.
+
+2. This method of characterizing Audio Aura won't take into account the listeners favorite genres, or
+perphaps the context to which that person was listening to certain types of music. Each persons emotion
+set is unique and can't be characterized by three characteristics of songs. A better way to analyse
+would be to try and infer context by understandind at which time during the day such songs were played or
+use a genre- based analysis or take in direct User Feedback would be the most accurate without affecting
+the User's personal space.

@@ -1,0 +1,17 @@
+Times:
+
+10 simulations: 0m0.019s
+100 simulations: 0m0.022s
+1000 simulations: 0m0.040s
+10000 simulations: 0m0.110s
+100000 simulations: 0m0.785s
+1000000 simulations: 0m7.893s
+
+Questions:
+
+Which predictions, if any, proved incorrect as you increased the number of simulations?: When a 100000 or a 1000000
+simulations are run, teams have a 0% chance at winning. So these are incorrect
+
+Suppose you're charged a fee for each second of compute time your program uses.
+After how many simulations would you call the predictions "good enough"?: A 1000 simulations, as its plausible enough
+as each team as a justifiable amount of a possibility at winning the world cup

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                document.querySelector('#red').addEventListener('click', function() {
+                    this.style.backgroundColor = 'red';
+                    console.log("Red Button Clicked");
+                    document.querySelector('#resultMessage').textContent = "Incorrect";
+                });
+
+                document.querySelector('#green').addEventListener('click', function() {
+                    this.style.backgroundColor = 'green';
+                    console.log("Green Button Clicked");
+                    document.querySelector('#resultMessage').textContent = "Correct!";
+                });
+
+                document.querySelectorAll('#red')[1].addEventListener('click', function() {
+                    this.style.backgroundColor = 'red';
+                    console.log("Third Button Clicked");
+                    document.querySelector('#resultMessage').textContent = "Incorrect";
+                });
+
+                document.querySelector('#submitButton').addEventListener('click', function() {
+                    const userInput = parseInt(document.querySelector('#Useranswer').value);
+                    if (userInput === 5) {
+                        document.querySelector('#Message').textContent = "Correct!";
+                        document.querySelector('#Useranswer').style.backgroundColor = 'green';
+                    } else {
+                        document.querySelector('#Message').textContent = "Incorrect.";
+                        document.querySelector('#Useranswer').style.backgroundColor = 'red';
+                    }
+                });
+            });
+        </script>
+
+
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>If a bat and a ball cost $ 1.10 and the bat costs exactly $1 more than the ball. What is the Cost of the ball ?</h3>
+                <button id='green'>$ 0.5</button> <button id='red'>$ 0.75</button> <button id='red'>$ 1</button>
+                <p id='resultMessage'></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>If it takes 5 machines, 5 min to make 5 widgets, how long would it take 100 machines to make 100 widgets ? (Provide only numeric answer)</h3>
+                <input id='Useranswer' autocomplete="off" autofocus name='q' placeholder='Answer' type='text'>
+                <button id='submitButton'>Submit</button>
+                <p id='Message'></p>
+            </div>
+
+        </div>
+    </body>
+
+</html>

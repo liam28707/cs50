@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <p>A share of {{ symbol["name"] }} ({{ symbol["symbol"] }}) costs {{ usd(symbol["price"]) }}.</p>
+    {% if graph_url %}
+    <h2>{{ symbol["name"] }} Stock Price Graph</h2>
+    <div>
+        <img src="{{ url_for('static', filename=graph_url) }}" alt="Stock Price Graph">
+    </div>
+    {% endif %}
+{% endblock %}
